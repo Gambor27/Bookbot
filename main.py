@@ -39,13 +39,15 @@ def make_report(book_text):
     character_list_sorted = character_count(book_text)
     num_lines = 0
     header = f'--Information about Frankenstein--\n{count} words in book\n\nCharacter Breakdown:'
-    print(character_list_sorted)
     print(header)
     for char in character_list_sorted:
+        count = character_list_sorted[char]
         if char == '\n':
             num_lines = character_list_sorted[char]
-        count = character_list_sorted[char]
-        print(f'The {char} character was found {count} times.')
+        elif char == " ":
+            print(f'There are {count} spaces in the book.')
+        else:
+            print(f'The {char} character was found {count} times.')
     print(f'There are {num_lines} in the book total.')
 
         
