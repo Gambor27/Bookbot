@@ -48,7 +48,7 @@ def make_report(book_text):
             print(f'There are {count} spaces in the book.')
         else:
             print(f'The {char} character was found {count} times.')
-    print(f'There are {num_lines} in the book total.')
+    print(f'There are {num_lines} lines in the book total.')
 
         
 main()
