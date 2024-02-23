@@ -20,8 +20,8 @@ def character_count(book_text):
             character_count[character] += 1
         else:
             character_count[character] = 1
-    report_data = sort_characters(character_count)
-    return report_data
+    sorted_data = sort_characters(character_count)
+    return sorted_data
 
 def sort_key(dict):
     return dict["count"]
@@ -39,6 +39,7 @@ def make_report(book_text):
     character_list_sorted = character_count(book_text)
     num_lines = 0
     header = f'--Information about Frankenstein--\n{word_count} words in book\n\nCharacter Breakdown:'
+    footer = f'--End Of Report--'
     print(header)
     for character in character_list_sorted:
         char = character['char']
@@ -50,5 +51,6 @@ def make_report(book_text):
         else:
             print(f'The {char} character was found {char_count} times.')
     print(f'There are {num_lines} lines in the book total.')
+    print(footer)
         
 main()
